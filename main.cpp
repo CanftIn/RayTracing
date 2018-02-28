@@ -176,9 +176,28 @@ int main()
 
     RGBType *pixels = new RGBType[width * height];
 
+    int aadepth = 1;
+	double aathreshold = 0.1;
+	double aspectratio = (double)width/(double)height;
+	double ambientlight = 0.2;
+	double accuracy = 0.00000001;
+
+    Vector3 O(CAN_ZERO, CAN_ZERO, CAN_ZERO);
     Vector3 X(CAN_ONE, CAN_ZERO, CAN_ZERO);
     Vector3 Y(CAN_ZERO, CAN_ONE, CAN_ZERO);
     Vector3 Z(CAN_ZERO, CAN_ZERO, CAN_ONE);
+
+    Vector3 new_sphere_location(1.75, -0.25, 0);
+	
+	Vector3 campos (3, 1.5, -4);
+
+    Vector3 look_at(CAN_ZERO, CAN_ZERO, CAN_ZERO);
+    Vector3 diff_btw(campos.x - look_at.x, campos.y - look_at.y, campos.z - look_at.z);
+
+    Vector3 camdir = (-diff_btw).Normalize();
+    Vector3 camright = Y.CrossProduct(camdir).Normalize();
+    Vector3 camdown = camright.CrossProduct(camdir);
+    
 
     for (int x = 0; x < width; x++)
     {

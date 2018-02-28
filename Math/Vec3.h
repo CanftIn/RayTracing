@@ -11,6 +11,7 @@
 #include "Constants.h"
 #include "VecBase.h"
 #include <iostream>
+#include <cmath>
 
 namespace CAN
 {
@@ -50,6 +51,15 @@ namespace CAN
 
 		inline T Sum() const { return x + y + z; }
 		inline T Product() const { return x * y * z; }
+		inline Vec Normalize()
+		{
+			T magnitude = sqrt((x*x) + (y*y) + (z*z));
+			return Vec (x/magnitude, y/magnitude, z/magnitude);
+		}
+		inline Vec CrossProduct(const Vec& v)
+		{
+			return Vec (x * v.z - z * v.y, z * v.x - x * v.z, x * v.y - y * v.x);
+		}
 
 		inline const T& operator [] (const size_t idx) const { assert(idx < 3); return (&x)[idx]; }
 		inline		 T& operator [] (const size_t idx) { assert(idx < 3); return (&x)[idx]; }
