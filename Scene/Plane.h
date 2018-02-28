@@ -9,7 +9,7 @@
 #define PLANE_H_
 
 #include "Object.h"
-#include "./Math/Vec3.h"
+#include "../Math/Vec3.h"
 #include "Color.h"
 
 namespace CAN

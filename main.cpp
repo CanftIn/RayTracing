@@ -14,7 +14,7 @@
 #include <limits>
 
 #include "./Math/Vec3.h"
-#include "Ray.h"
+#include "./Scene/Ray.h"
 
 using namespace std;
 using namespace CAN;
@@ -197,7 +197,7 @@ int main()
     Vector3 camdir = (-diff_btw).Normalize();
     Vector3 camright = Y.CrossProduct(camdir).Normalize();
     Vector3 camdown = camright.CrossProduct(camdir);
-    
+
 
     for (int x = 0; x < width; x++)
     {

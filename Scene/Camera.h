@@ -8,7 +8,7 @@
 #ifndef CAMERA_H_
 #define CAMERA_H_
 
-#include "./Math/Vec3.h"
+#include "../Math/Vec3.h"
 
 namespace CAN
 {

@@ -9,7 +9,7 @@
 #define LIGHT_H_
 
 #include "Color.h"
-#include "./Math/Vec3.h"
+#include "../Math/Vec3.h"
 
 namespace CAN
 {

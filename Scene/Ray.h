@@ -8,7 +8,7 @@
 #ifndef RAY_H_
 #define RAY_H_
 
-#include "./Math/Vec3.h"
+#include "../Math/Vec3.h"
 
 namespace CAN
 {

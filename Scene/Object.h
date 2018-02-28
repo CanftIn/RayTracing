@@ -9,7 +9,7 @@
 #define OBJECT_H_
 
 #include "Ray.h"
-#include "./Math/Vec3.h"
+#include "../Math/Vec3.h"
 #include "Color.h"
 
 namespace CAN
