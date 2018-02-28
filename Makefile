@@ -7,7 +7,7 @@ CXXFLAGS = $(COMMONFLAGS) -std=c++11
 
 INC = -I "./" "./Math/"
 
-TARGET = ./RayTracing.exe
+TARGET = ./RayTracing
 
 RayTracing: $(OBJ)
 	$(CC) $(OBJ) -o $(TARGET)
