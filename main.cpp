@@ -15,6 +15,11 @@
 
 #include "./Math/Vec3.h"
 #include "./Scene/Ray.h"
+#include "./Scene/Light.h"
+#include "./Scene/Camera.h"
+#include "./Models/Color.h"
+#include "./Models/Plane.h"
+//#include "./Scene/Object.h"
 
 using namespace std;
 using namespace CAN;
@@ -197,6 +202,16 @@ int main()
     Vector3 camdir = (-diff_btw).Normalize();
     Vector3 camright = Y.CrossProduct(camdir).Normalize();
     Vector3 camdown = camright.CrossProduct(camdir);
+    Camera scene_cam(campos, camdir, camright, camdown);
+
+	Color white_light (1.0, 1.0, 1.0, 0);
+	Color pretty_green (0.5, 1.0, 0.5, 0.3);
+	Color maroon (0.5, 0.25, 0.25, 0);
+	Color tile_floor (1, 1, 1, 2);
+	Color gray (0.5, 0.5, 0.5, 0);
+	Color black (0.0, 0.0, 0.0, 0);
+
+    Vector3 light_position(-7, 10, -10);
 
 
     for (int x = 0; x < width; x++)

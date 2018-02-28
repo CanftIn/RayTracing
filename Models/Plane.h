@@ -8,9 +8,9 @@
 #ifndef PLANE_H_
 #define PLANE_H_
 
-#include "Object.h"
+#include "../Scene/Object.h"
 #include "../Math/Vec3.h"
-#include "Color.h"
+#include "../Scene/Color.h"
 
 namespace CAN
 {
