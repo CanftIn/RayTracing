@@ -8,7 +8,7 @@
 #ifndef PLANE_H_
 #define PLANE_H_
 
-#include "../Scene/Object.h"
+#include "Object.h"
 #include "../Math/Vec3.h"
 #include "../Scene/Color.h"
 

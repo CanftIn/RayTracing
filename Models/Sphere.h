@@ -8,8 +8,7 @@
 #ifndef SPHERE_H_
 #define SPHERE_H_
 
-#include "math.h"
-#include "../Scene/Object.h"
+#include "Object.h"
 #include "../Scene/Color.h"
 #include "../Math/Vec3.h"
 

@@ -8,9 +8,9 @@
 #ifndef OBJECT_H_
 #define OBJECT_H_
 
-#include "Ray.h"
+#include "../Scene/Ray.h"
 #include "../Math/Vec3.h"
-#include "Color.h"
+#include "../Scene/Color.h"
 
 namespace CAN
 {

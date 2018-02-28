@@ -12,14 +12,16 @@
 #include <vector>
 #include <cmath>
 #include <limits>
+#include <ctime>
 
 #include "./Math/Vec3.h"
 #include "./Scene/Ray.h"
 #include "./Scene/Light.h"
 #include "./Scene/Camera.h"
-#include "./Models/Color.h"
+#include "./Scene/Color.h"
 #include "./Models/Plane.h"
-//#include "./Scene/Object.h"
+#include "./Models/Sphere.h"
+//#include "./Models/Object.h"
 
 using namespace std;
 using namespace CAN;
@@ -175,6 +177,9 @@ void savebmp(const char *filename, int width, int height, int dpi, RGBType *data
 
 int main()
 {
+	clock_t t1, t2;
+	t1 = clock();
+
     int width = 400;
     int height = 400;
     int dpi = 96;
@@ -212,7 +217,18 @@ int main()
 	Color black (0.0, 0.0, 0.0, 0);
 
     Vector3 light_position(-7, 10, -10);
+    Light scene_light(light_position, white_light);
+    vector<Source*> light_sources;
+    light_sources.push_back(dynamic_cast<Source*>(&scene_light));
 
+    // scene objects
+	Sphere scene_sphere (O, 1, pretty_green);
+	Sphere scene_sphere2 (new_sphere_location, 0.5, maroon);
+	Plane scene_plane (Y, -1, tile_floor);
+	vector<Object*> scene_objects;
+	scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere));
+	scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere2));
+	scene_objects.push_back(dynamic_cast<Object*>(&scene_plane));
 
     for (int x = 0; x < width; x++)
     {
@@ -236,5 +252,13 @@ int main()
     }
 
     savebmp("black_border.bmp", width, height, dpi, pixels);
+    
+    delete pixels;
+
+	t2 = clock();
+	float diff = ((float)t2 - (float)t1)/1000;
+	
+	cout << diff << " seconds" << endl;
+	
     return 0;
 }
