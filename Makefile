@@ -5,7 +5,7 @@ OBJ = ./main.o
 COMMONFLAGS = -Wall -Wextra -O2 -g
 CXXFLAGS = $(COMMONFLAGS) -std=c++11
 
-INC = -I "./"
+INC = -I "./" "./Math/"
 
 TARGET = ./RayTracing.exe
 

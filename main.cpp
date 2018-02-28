@@ -13,7 +13,10 @@
 #include <cmath>
 #include <limits>
 
+#include "./Math/Vec2.h"
+
 using namespace std;
+using namespace CAN;
 
 struct RGBType
 {
@@ -166,21 +169,26 @@ void savebmp(const char *filename, int width, int height, int dpi, RGBType *data
 
 int main()
 {
-    int width  = 400,
-    height = 400,
-    dpi = 96;
+    int width = 400;
+    int height = 400;
+    int dpi = 96;
 
     RGBType *pixels = new RGBType[width * height];
 
-    for (int x = 0; x < width; x++) {
-        for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+        {
             int a = y * width + x;
 
-            if ((x > 50 && x < 350) && (y > 50 && y < 350)) {
+            if ((x > 50 && x < 350) && (y > 50 && y < 350))
+            {
                 pixels[a].r = 255;
                 pixels[a].g = 255;
                 pixels[a].b = 5;
-            } else {
+            }
+            else
+            {
                 pixels[a].r = 55;
                 pixels[a].g = 55;
                 pixels[a].b = 55;
