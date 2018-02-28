@@ -13,7 +13,8 @@
 #include <cmath>
 #include <limits>
 
-#include "./Math/Vec2.h"
+#include "./Math/Vec3.h"
+#include "Ray.h"
 
 using namespace std;
 using namespace CAN;
@@ -174,6 +175,10 @@ int main()
     int dpi = 96;
 
     RGBType *pixels = new RGBType[width * height];
+
+    Vector3 X(CAN_ONE, CAN_ZERO, CAN_ZERO);
+    Vector3 Y(CAN_ZERO, CAN_ONE, CAN_ZERO);
+    Vector3 Z(CAN_ZERO, CAN_ZERO, CAN_ONE);
 
     for (int x = 0; x < width; x++)
     {
